@@ -1,0 +1,1046 @@
+    @import 'variables.scss';
+    @import 'mixins.scss';
+    // form inputs
+    /* form inputes styling*/
+    
+    // radio and checkbox
+    .radio {
+        position: relative;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 50px;
+        &.first {
+            margin-left: 0;
+        }
+        label {
+            font-size: 14px;
+            line-height: 1.42857;
+            font-weight: 400;
+            padding-left: 25px;
+            & .circle {
+                border: 1px solid rgba(0, 0, 0, .54);
+                height: 15px;
+                width: 15px;
+                @include border-radius(100%);
+            }
+            span {
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 6px;
+                transition-duration: 0.2s;
+            }
+            & .check {
+                height: 15px;
+                width: 15px;
+                @include border-radius(100%);
+                background-color: #9c27b0;
+                -webkit-transform: scale3d(0, 0, 0);
+                -moz-transform: scale3d(0, 0, 0);
+                -o-transform: scale3d(0, 0, 0);
+                -ms-transform: scale3d(0, 0, 0);
+                transform: scale3d(0, 0, 0);
+            }
+        }
+        input[type=radio] {
+            opacity: 0;
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            margin-top: 2px;
+        }
+        .checkbox {
+            @extend .radio;
+        }
+        input[type=radio]:checked~.check {
+            background-color: #9c27b0;
+        }
+        input[type=radio]:checked~.check {
+            -webkit-transform: scale3d(0.65, 0.65, 1);
+            -moz-transform: scale3d(0.65, 0.65, 1);
+            -o-transform: scale3d(0.65, 0.65, 1);
+            -ms-transform: scale3d(0.65, 0.65, 1);
+            transform: scale3d(0.65, 0.65, 1);
+        }
+    }
+    
+    .radio label .check {
+        height: 15px;
+        width: 15px;
+        border-radius: 100%;
+        background-color: $white-bg;
+        -webkit-transform: scale3d(0, 0, 0);
+        -moz-transform: scale3d(0, 0, 0);
+        -o-transform: scale3d(0, 0, 0);
+        -ms-transform: scale3d(0, 0, 0);
+        transform: scale3d(0, 0, 0);
+    }
+    
+    .radio label span {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 2px;
+        transition-duration: 0.2s;
+    }
+    /* checkbox*/
+    
+    .checkbox input[type=checkbox] {
+        opacity: 0;
+        position: absolute;
+        margin: 0;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        left: 0;
+        pointer-events: none;
+    }
+    
+    .checkbox .checkbox-material {
+        vertical-align: middle;
+        position: relative;
+        top: 1px;
+        padding-right: 5px;
+        display: inline-block;
+    }
+    
+    .checkbox .checkbox-material .check {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid rgba(0, 0, 0, .54);
+        overflow: hidden;
+        z-index: 1;
+        border-radius: 3px;
+    }
+    
+    .checkbox .checkbox-material:before {
+        display: block;
+        position: absolute;
+        left: 0;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.84);
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+        z-index: 1;
+        opacity: 0;
+        margin: 0;
+        top: 0;
+        -webkit-transform: scale3d(2.3, 2.3, 1);
+        -moz-transform: scale3d(2.3, 2.3, 1);
+        -o-transform: scale3d(2.3, 2.3, 1);
+        -ms-transform: scale3d(2.3, 2.3, 1);
+        transform: scale3d(2.3, 2.3, 1);
+    }
+    
+    .checkbox input[type=checkbox]:checked+.checkbox-material:before {
+        -webkit-animation: rippleOn 500ms;
+        -moz-animation: rippleOn 500ms;
+        -o-animation: rippleOn 500ms;
+        -ms-animation: rippleOn 500ms;
+        animation: rippleOn 500ms;
+    }
+    
+    .checkbox .checkbox-material .check {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid rgba(0, 0, 0, .54);
+        overflow: hidden;
+        z-index: 1;
+        border-radius: 3px;
+    }
+    
+    .checkbox input[type=checkbox]:checked+.checkbox-material .check {
+        background: $white-bg;
+    }
+    
+    .checkbox .checkbox-material .check:before {
+        position: absolute;
+        content: "";
+        transform: rotate(45deg);
+        display: block;
+        margin-top: -3px;
+        margin-left: 7px;
+        width: 0;
+        height: 0;
+        background: red;
+        box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
+        -webkit-animation: checkbox-off 0.3s forwards;
+        -moz-animation: checkbox-off 0.3s forwards;
+        -o-animation: checkbox-off 0.3s forwards;
+        -ms-animation: checkbox-off 0.3s forwards;
+        animation: checkbox-off 0.3s forwards;
+    }
+    
+    .checkbox input[type=checkbox]:checked+.checkbox-material .check:before {
+        color: #FFFFFF;
+        box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+        -webkit-animation: checkbox-on 0.3s forwards;
+        -moz-animation: checkbox-on 0.3s forwards;
+        -o-animation: checkbox-on 0.3s forwards;
+        -ms-animation: checkbox-on 0.3s forwards;
+        animation: checkbox-on 0.3s forwards;
+    }
+    
+    @keyframes checkbox-on {
+        0% {
+            box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+        }
+        50% {
+            box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+        }
+        100% {
+            box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+        }
+    }
+    
+    @keyframes rippleOn {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.2;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes rippleOff {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.2;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    .checkbox label {
+        padding-left: 10px;
+    }
+    
+    // radio box
+    .radio {
+        & .media {
+            overflow: visible;
+        }
+        & .radio-box {
+            position: relative;
+        }
+        & .media-left {
+            padding-right: 15px;
+        }
+        & .media-heading {
+            position: relative;
+            color: $white-bg;
+            margin: 5px 0 0 0;
+            left: 0;
+            top: 0;
+            position: relative;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        & .radio-box {
+            width: 40px;
+            left: 0;
+            top: 10px;
+            height: 40px;
+            border: 1px solid #ddd;
+            @include border-radius(3px);
+        }
+        & .circle {
+            left: 11px;
+            top: 11px;
+        }
+        & .check {
+            @extend .circle;
+        }
+    }
+    
+    // form radio box
+    .check-options {
+        & .checkbox {
+            margin-top: 0;
+            padding-left: 0;
+            & label {
+                padding-left: 0;
+                color: #12498c;
+            }
+        }
+    }
+    
+    // vacancy form
+    .main-form {
+        &.area-search-form {
+            padding: 0;
+            margin-bottom: 0;
+            line-height: normal;
+            & .rounded-btn {
+                height: 35px;
+                line-height: 35px;
+                @include border-radius(0);
+            }
+            & .textfield {
+                @include box-shadow(none);
+            }
+            & .select {
+                line-height: 24px;
+            }
+        }
+        .file-upload {
+            position: relative;
+            padding: 0;
+            border: 1px solid #eee;
+            background: none;
+            padding: 0 20px 0 0;
+            width: $full-width;
+            border: 1px solid #ddd;
+            background-color: $white-bg;
+            height: 30px;
+            display: table;
+            @include border-radius (0);
+            @include transition(.3s ease-in-out);
+            input[type='file'] {
+                opacity: 0;
+                display: inline-block;
+                width: 100%;
+                padding: 5px 20px !important;
+                margin: 0 !important;
+            }
+            &:before {
+                content: "Upload File";
+                opacity: 1;
+                position: absolute;
+                right: 15px;
+                top: 7px;
+                background: $white-bg;
+                padding: 2px 30px;
+                font-size: 12px;
+                color: #fff;
+                border-radius: 3px;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                line-height: 18px;
+                @include transition (.3s ease-out);
+            }
+            &:hover:before {
+                background: $white-bg;
+                color: #fff;
+                @include transition (.3s ease-out);
+            }
+        }
+    }
+    
+    // search
+    .search-block {
+        height: 100vh;
+        & .search-box {
+            text-align: center;
+        }
+        h1 {
+            font-size: 42px;
+            line-height: 52px;
+            color: #aaa;
+            font-weight: $regular;
+            padding: 0 20%;
+        }
+        h2 {
+            font-weight: $regular;
+            font-size: 16px;
+            color: #fff;
+            a {
+                color: $white-bg;
+                &:hover {
+                    color: $white-bg;
+                }
+            }
+        }
+        form {
+            width: 80%;
+            margin: 30px auto;
+            background: $white-bg;
+            padding: 0;
+            @include border-radius(50px);
+            position: relative;
+            height: 60px;
+        }
+        & .textfield {
+            float: left;
+            width: 80%;
+            border: 0;
+            font-size: 16px;
+            padding-left: 30px;
+            height: 60px;
+            background: none;
+        }
+        & .search-btn {
+            position: absolute;
+            background: $white-bg;
+            width: 70px;
+            height: 60px;
+            top: 0;
+            right: 0;
+            line-height: 73px;
+            text-align: center;
+            @include border-radius(0 30px 30px 0);
+            font-size: 24px;
+        }
+    }
+    
+    // feedback form
+    /*feedback form*/
+    
+    .contact-form {
+        & .main-title {
+            margin-bottom: 15px !important;
+        }
+    }
+    
+    .feedback {
+        margin: 30px 0 0 0;
+        padding: 0;
+    }
+    
+    .form-groups {
+        margin-bottom: 40px;
+        padding: 5px;
+        background: #eee;
+        &.recaptcha {
+            background: none;
+            margin-bottom: 10px;
+        }
+    }
+    
+    .feedback fieldset {
+        @extend .feedback;
+        margin: 0;
+    }
+    
+    .feedback .textfield {
+        border: 0;
+        padding: 5px 20px;
+        font-size: 14px;
+        display: block;
+        width: 100%;
+        margin: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        background: none;
+        position: relative;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        border: 0;
+        // background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
+        // background-size: 0 2px, 100% 1px;
+        // background-repeat: no-repeat;
+        // background-position: center bottom, center calc(100% - 1px);
+        // background-color: transparent;
+        transition: background 0s ease-out;
+        float: none;
+        box-shadow: none;
+        color: #222;
+        line-height: 20px;
+    }
+    
+    .feedback .textarea {
+        @extend .textfield;
+        height: 200px;
+        color: $white-bg;
+    }
+    
+    .feedback .select {
+        @extend .textfield;
+        font-size: 14px;
+    }
+    
+    .feedback {
+        & .select {
+            //background: url("layouts/images/icon-select.png") no-repeat 96% 50%;
+            //height: 114;
+            padding-left: 0;
+            color: #aaa;
+            border-bottom: 1px solid #d2d2d2;
+            & option {
+                font-family: "Source Sans Pro";
+                color: #ccc;
+            }
+        }
+    }
+    
+    .contact-title {
+        font-size: 14px;
+        display: block;
+        margin: 0 0 30px 0;
+    }
+    
+    .contact-name {
+        @extend .contact-title;
+        font-size: 18px;
+        color: #111;
+        margin: 0;
+    }
+    
+    .contact-address {
+        margin-top: 30px;
+        & .address-info {
+            font-size: 14px;
+            display: block;
+            border-top: 1px solid #ddd;
+            padding: 30px 0;
+            line-height: 22px;
+        }
+        & .first {
+            border-top: 0;
+            padding-top: 10px;
+        }
+    }
+    /*placeholder*/
+    
+    .label {
+        color: $text-color;
+        font-size: 16px;
+        position: absolute;
+        left: 25px;
+        font-weight: normal;
+        top: 5px;
+        padding: 7px 0 0 13px;
+        pointer-events: none;
+        color: #aaaaaa;
+        transition: all 200ms;
+    }
+    
+    .submit {
+        & .right-icon {
+            font-size: 18px;
+            margin-left: 15px;
+        }
+    }
+    /*sticy menu*/
+    
+    .focused {
+        & .textfield {
+            position: relative;
+            // background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
+            // background-size: 100% 2px, 100% 1px;
+            transition-duration: 0.3s;
+        }
+        label {
+            position: absolute;
+            top: -30px;
+            font-size: 12px;
+            left: 25px;
+        }
+    }
+    
+    // search college
+    .search-college {
+        &.search-block {
+            height: auto;
+        }
+        & .show-filter {
+            display: flex !important;
+        }
+        form {
+            background: none;
+            height: auto;
+            width: $full-width;
+            padding: 0;
+            @include border-radius(0);
+        }
+        & .filter-box {
+            background: #fff;
+            padding: 0;
+            @include border-radius(50px);
+            position: relative;
+            height: 60px;
+            border: 0;
+            display: table;
+            width: $full-width;
+            padding-left: 140px;
+        }
+        & .search-btn {
+            background: $text-color;
+            color: $white-bg;
+        }
+        & .college-search {
+            width: 90%;
+        }
+        & .filter-option {
+            position: absolute;
+            left: 0;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            background: #ddd;
+            padding: 0 15px 0 30px;
+            height: 60px;
+            line-height: 60px;
+            color: $text-color;
+            text-transform: uppercase;
+            & .right-icon {
+                font-size: 16px;
+                margin-left: 15px;
+                color: #979696;
+            }
+        }
+        & .form-groups {
+            @extend .filter-box;
+            padding: 0 15px 0 30px;
+            display: block;
+            .select {
+                width: $full-width;
+                padding: 16px 0;
+                font-size: 16px;
+                color: #767676;
+                border: 0;
+                background: transparent url("../images/down.png") no-repeat 94% 50%;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                padding-right: 35px;
+            }
+        }
+        & .filters {
+            margin: 0;
+            width: $full-width;
+            @include transition(.3s all);
+            display: none;
+        }
+        & .search-now {
+            @include transition(.3s all);
+        }
+    }
+    
+    // search data
+    .search-data {
+        float: left;
+        width: 160px;
+        background: #eee;
+        @include border-radius(50px);
+        margin-left: 15px;
+        padding: 2px 18px;
+        position: relative;
+        & .textfield {
+            background: #eee;
+            font-size: 12px;
+            line-height: 14px;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 90%;
+        }
+        & .search-btn {
+            position: absolute;
+            right: 15px;
+            top: 5px;
+            font-size: 12px;
+        }
+    }
+    
+    // search filters
+    .search-filter {
+        margin-top: -7px;
+    }
+    
+    .search-filters {
+        @extend .search-data;
+        padding-right: 10px;
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            font-size: 12px;
+            color: #666;
+            border: 0;
+            padding-right: 0;
+            background: #eee url(../images/down.png) no-repeat 96% 50%;
+            background-size: 13px;
+            float: left;
+            width: $full-width;
+        }
+        & .form-groups {
+            padding: 0;
+            border: 0;
+        }
+    }
+    
+    // student college search
+    .student-college-search {
+        margin-bottom: 40px;
+        &.search-college {
+            & .form-groups {
+                background: #f2ecec;
+                padding-left: 22px;
+            }
+            & .filter-option {
+                background: #f2ecec;
+                padding-left: 40px;
+            }
+            & .college-search {
+                background: #f8f7f7;
+                width: 90%;
+            }
+            & .search-now {
+                width: $full-width;
+                margin: 0 !important;
+                display: table;
+                max-width: none;
+            }
+        }
+    }
+    
+    // upload form
+    .upload-box {
+        & .modal-header {
+            background: $white-bg;
+            border-radius: 0 !important;
+            border: 0 !important;
+            & .modal-title {
+                font-size: 20px;
+                color: $text-color;
+                border: 0;
+                font-weight: $semi-bold;
+                text-align: center;
+                display: table;
+                width: $full-width;
+            }
+            & .dismiss-btn {
+                position: absolute;
+                opacity: 1;
+                right: -20px;
+                top: -20px;
+                margin: 0;
+                padding: 0;
+                z-index: 98;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 18px;
+                text-align: center;
+                background: $text-color;
+                border: 1px solid #ccc;
+                @include transition(.3s ease-in-out);
+                @include border-radius(50px);
+                @include box-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+                &:hover {
+                    background: $white-bg;
+                    @include transition(.3s ease-in-out);
+                }
+            }
+        }
+        & .upload-form {
+            & .label {
+                position: relative;
+                top: 0;
+                left: 0;
+                color: $text-color;
+                display: block;
+                margin: 0 0 10px 0;
+                padding: 0;
+                font-weight: $semi-bold;
+                font-size: 14px;
+            }
+            & .textfield {
+                padding: 5px 10px;
+                display: block;
+                color: $text-color;
+                font-size: 14px;
+                border: 1px solid #ddd;
+                width: $full-width;
+            }
+            & .textarea {
+                border: 1px solid #ddd;
+                width: $full-width;
+                height: 300px;
+                font-size: 14px;
+                padding: 5px 10px;
+            }
+            & .select {
+                width: 100%;
+                padding: 0 15px;
+                font-size: 14px;
+                height: 38px;
+                color: #767676;
+                border: 1px solid #ddd;
+                background: transparent url(../images/down.png) no-repeat 98% 50%;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                @include border-radius(0);
+            }
+            & .form-group {
+                margin-bottom: 1.5em;
+            }
+        }
+    }
+    
+    // payment form
+    #payment-form {
+        & .modal-lg {
+            max-width: 870px;
+        }
+        & .payment-info {
+            background: #666666;
+            padding: 40px;
+            color: #f3f3f3;
+            & .main-title {
+                color: $white-bg;
+                font-size: 23px;
+                line-height: 34px;
+                font-weight: $semi-bold;
+                display: block;
+                margin-bottom: 40px;
+                letter-spacing: -1px;
+            }
+            & .media {
+                & .left-icon {
+                    font-size: 30px;
+                }
+                & .main-title {
+                    font-size: 18px;
+                    line-height: 24px;
+                    color: #f3f3f3;
+                    font-weight: $regular;
+                    letter-spacing: normal;
+                }
+            }
+        }
+        & .payment-form {
+            background: $white-bg;
+        }
+        form {
+            padding: 40px 0;
+        }
+        & .form-groups {
+            background: #eee;
+            position: relative;
+            padding: 0 15px;
+        }
+        & .label {
+            left: inherit;
+        }
+        & .fieldbox {
+            padding: 0 15px;
+        }
+        & .textfield {
+            padding: 15px;
+        }
+        & .login-btn {
+            margin: 0;
+            @include border-radius(0);
+            width: $full-width;
+            font-size: 20px;
+            font-weight: $semi-bold;
+        }
+        & .dismiss-btn {
+            position: absolute;
+            opacity: 1;
+            right: -30px;
+            top: -20px;
+            z-index: 98;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            text-align: center;
+            background: $text-color;
+            border: 1px solid #ccc;
+            @include transition(.3s ease-in-out);
+            @include border-radius(50px);
+            @include box-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+            &:hover {
+                background: $white-bg;
+                @include transition(.3s ease-in-out);
+            }
+        }
+        & .modal-content {
+            position: relative;
+        }
+    }
+    /* new custome file upload*/
+    
+    .file-upload {
+        position: relative;
+        padding: 0;
+        border: 1px solid #eee;
+        background: none;
+        padding: 0 20px 0 0;
+        width: 100%;
+        border: 1px solid #d2d6de;
+        height: 35px;
+        display: inline-block;
+    }
+    
+    .file-upload input[type='file'] {
+        opacity: 0;
+        display: inline-block;
+        width: 100%;
+        padding: 5px 20px !important;
+        margin: 0 !important;
+    }
+    
+    .file-upload:before {
+        content: "Upload";
+        opacity: 1;
+        position: absolute;
+        right: 15px;
+        top: 5px;
+        padding: 2px 30px;
+        font-size: 12px;
+        color: $text-color;
+        background: $white-bg;
+        @include border-radius(3px);
+        line-height: 18px;
+        @include transition (.3s ease-out);
+    }
+    
+    .file-upload:hover:before {
+        @include transition (.3s ease-out);
+        @include box-shadow(0 5px 30px rgba(0, 0, 0, 0.8));
+    }
+    
+    .file-upload .choose-file {
+        margin-top: -40px;
+        margin-bottom: 0;
+        font-size: 13px;
+        color: #888;
+        margin-left: 15px;
+        width: 60%;
+        float: left;
+        font-weight: normal;
+    }
+    
+    .file-upload .choose-file span {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 80%;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        top: 7px;
+    }
+    
+    .father-box {
+        & .sub-main-title {
+            margin-bottom: 10px;
+            font-weight: $semi-bold;
+            font-size: 14px;
+        }
+    }
+    
+    .mother-box {
+        @extend .father-box;
+        & .sub-main-title {
+            margin-top: 40px;
+        }
+    }
+    
+    // select 2
+    .select2-container .select2-selection--multiple {
+        min-height: inherit;
+    }
+    
+    .select2-container--default .select2-selection--multiple {
+        border: 1px solid #ddd;
+        @include border-radius(0 !important);
+        cursor: text;
+        font-size: 14px;
+    }
+    
+    .select2-container--default .select2-search--inline .select2-search__field {
+        width: 100% !important;
+    }
+    
+    .select2-container--default.select2-container--focus .select2-selection--multiple {
+        border: 1px solid #ddd;
+    }
+    
+    .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+        padding: 0 5px 5px 5px;
+        width: 100%;
+        display: table;
+    }
+    
+    .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+        margin: 5px 0 0 5px;
+        line-height: normal;
+    }
+    
+    // search site
+    .search-site {
+        width: 300px;
+        margin: 0;
+        background: #333;
+        padding: 0;
+        position: absolute;
+        height: 50px;
+        top: 50px;
+        right:0;
+        z-index: 98;
+        display: none;
+        @include box-shadow(0 3px 10px rgba(0, 0, 0, 0.3));
+        &.hide {
+            display: none !important;
+        }
+        &.show-search {
+            display: block;
+        }
+        & .textfield {
+            float: left;
+            width: 84%;
+            border: 0;
+            font-size: 16px;
+            padding-left: 15px;
+            height: 50px;
+            background: none;
+            &:focus {
+                background: #333;
+                color: $white-bg;
+                @include transition(.3s ease-in-out);
+            }
+        }
+        & .search-btn {
+            position: absolute;
+            background: #888;
+            width: 50px;
+            height: 50px;
+            top: 0;
+            right: 0;
+            color: $white-bg;
+            line-height: 58px;
+            text-align: center;
+            font-size: 18px;
+            border: 0;
+            cursor: pointer;
+            @include transition(.3s ease-in-out);
+            &:hover {
+                background: $tag-bg;
+                @include transition(.3s ease-in-out);
+            }
+        }
+    }
+    
+    // close btn icon replace
+    .btn-search {
+        &.close-icon {
+            & .left-icon {
+                &:before {
+                    content: "\e870";
+                    @include transition(.3s ease-in-out);
+                }
+            }
+        }
+    }

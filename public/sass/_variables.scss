@@ -1,0 +1,106 @@
+// Font Variables
+$primary-font: 'Mukta',
+sans-serif;
+// body text color
+$body-color:#222222;
+$body-bg:#fff;
+$footer-bg:#f0f0f0;
+$text-color:#222;
+$green-bg:#267163;
+$tag-bg:#e74c3c;
+$pradesh-bg:#d13938;
+$sub-line:#222;
+$body-text:19px;
+$title-color:#222;
+$bishesh-bg:#e9f5ff;
+$kala-bg:#743572;
+$footer-title:#aaa;
+$top-nav-bg:#222222;
+$main-nav-bg:#222222;
+$live-bg:#ffdb3a;
+$dark-gray:#383838;
+// red bg
+$menu-bg:#267163;
+$active-bg:#84b4d4;
+// regular
+$regular: 400;
+//semi bold
+$semi-bold:500;
+$bold:700;
+// blockquote border
+$blockquote-border-color:#e1e1e1;
+// link color
+$link-color: #333;
+// hover color
+$hover-color: #e74c3c;
+// white bg
+$white-bg:#fff;
+// full width
+$full-width: 100%;
+// half width
+$half-width:50%;
+// no margin
+$no-margin:0;
+// no padding
+$no-padding:0;
+// text decoration
+$none:none;
+// ouline
+$no-outline:0;
+$nav-font:14px;
+$blockquote-font: 24px;
+//border none
+$no-border:0;
+$breadcrumb-font:14px;
+// social media icon colors
+$sms:#dd4b39;
+$sms:#dd4b39;
+$ivr:#f58e49;
+$email:#00a54a;
+$twitter: #00aced;
+$facebook: #3b5998;
+$googleplus: #dd4b39;
+$pinterest: #cb2027;
+$linkedin: #007bb6;
+$youtube: #bb0000;
+$vimeo: #1ab7ea;
+$tumblr: #32506d;
+$instagram: #bc2a8d;
+$flickr: #ff0084;
+$dribbble: #ea4c89;
+$quora: #a82400;
+$foursquare: #0072b1;
+$forrst: #5B9A68;
+$vk: #45668e;
+$wordpress: #21759b;
+$stumbleupon: #EB4823;
+$yahoo: #7B0099;
+$blogger: #fb8f3d;
+$soundcloud: #ff3a00;
+$more-btn:14px;
+$package-title:30px;
+$package-color:#444;
+$package-info:16px;
+$page-title:26px;
+$sub-title:28px;
+// uppercase
+$uppercase:uppercase;
+// lowercase
+$lowercase:lowercase;
+// slider title
+$slider-title:28px;
+// gradient lighter to darker
+$darker:#333;
+$lighter:#fff;
+$startColor:rgba(0, 0, 0, 0);
+$endColor:rgba(0, 0, 0, 1);
+$start-Color:rgba(255, 255, 255, 0);
+$end-Color:rgba(255, 255, 255, 1);
+$orange-darker:#d87a08;
+$orange-lighter:#fa951c;
+// responsive media queries
+$media-query-ipad: (min-width: 992px) and (max-width: 1199px);
+$media-query-tablet:(min-width: 768px) and (max-width: 991px);
+$media-query-phones:(max-width: 767px);
+$media-query-medium-phones:(max-width: 576px);
+$media-query-small-phones:(max-width: 480px);

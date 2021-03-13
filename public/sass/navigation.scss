@@ -1,0 +1,655 @@
+                                                                                @import 'variables.scss';
+                                                                                @import 'mixins.scss';
+                                                                                // navigation
+                                                                                .navigation_box {
+                                                                                    display: flex;
+                                                                                    position: relative;
+                                                                                    margin: 0;
+                                                                                    &.mains {
+                                                                                        ul {
+                                                                                            width: auto;
+                                                                                            margin: 0 auto;
+                                                                                        }
+                                                                                    }
+                                                                                    ul {
+                                                                                        float: left;
+                                                                                        margin: 0;
+                                                                                        padding: 0;
+                                                                                        width: $full-width;
+                                                                                        @include border-radius(0 !important);
+                                                                                        border: 0 !important;
+                                                                                        li {
+                                                                                            list-style: none;
+                                                                                            margin: 0;
+                                                                                            padding: 0;
+                                                                                            float: left;
+                                                                                            ul {
+                                                                                                background: #ddd !important;
+                                                                                                li {
+                                                                                                    width: $full-width;
+                                                                                                    float: left;
+                                                                                                    border-top: 1px solid #444;
+                                                                                                    &:first-child {
+                                                                                                        border-top: 0;
+                                                                                                    }
+                                                                                                    a {
+                                                                                                        font-weight: $regular;
+                                                                                                    }
+                                                                                                    ul {
+                                                                                                        top: 0;
+                                                                                                        right: -$full-width;
+                                                                                                        left: inherit;
+                                                                                                    }
+                                                                                                    a {
+                                                                                                        font-size: 16px;
+                                                                                                        line-height: 20px;
+                                                                                                        padding: 9px 16px;
+                                                                                                        color: #ddd;
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                            a {
+                                                                                                background: none;
+                                                                                                color: #fff !important;
+                                                                                                &:hover {
+                                                                                                    background: #555 !important;
+                                                                                                    color: $white-bg;
+                                                                                                }
+                                                                                                &.show {
+                                                                                                    a {
+                                                                                                        background: #222;
+                                                                                                        color: #ccc;
+                                                                                                        &:hover {
+                                                                                                            background: #555 !important;
+                                                                                                            color: $white-bg;
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                            &.open {
+                                                                                                a {
+                                                                                                    background: #e74c3c;
+                                                                                                    color: $white-bg;
+                                                                                                    &:hover {
+                                                                                                        background: #eee !important;
+                                                                                                        color: #222;
+                                                                                                    }
+                                                                                                }
+                                                                                                ul {
+                                                                                                    @include border-radius(0);
+                                                                                                    background: #222;
+                                                                                                    border: 0;
+                                                                                                    @include box-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
+                                                                                                    li {
+                                                                                                        width: $full-width;
+                                                                                                        float: left;
+                                                                                                        border-top: 1px solid #444;
+                                                                                                        &:first-child {
+                                                                                                            border-top: 0;
+                                                                                                        }
+                                                                                                        & .dropdown-toggle {
+                                                                                                            &:after {
+                                                                                                                @include transform(rotate(-90deg));
+                                                                                                            }
+                                                                                                        }
+                                                                                                        ul {
+                                                                                                            li {
+                                                                                                                & .dropdown-toggle {
+                                                                                                                    &:after {
+                                                                                                                        @include transform(rotate(-90deg));
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                        a {
+                                                                                                            color: #888;
+                                                                                                            padding: 9px 16px;
+                                                                                                            font-size: 16px;
+                                                                                                            line-height: 20px;
+                                                                                                            background: #222;
+                                                                                                            &:hover {
+                                                                                                                background: #333 !important;
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                            a {
+                                                                                                font-size: 18px;
+                                                                                                color: #222;
+                                                                                                font-weight: $bold;
+                                                                                                padding: 9px 16px;
+                                                                                                display: block;
+                                                                                                line-height: 32px;
+                                                                                                &.selected {
+                                                                                                    background: none;
+                                                                                                    color: #d13938;
+                                                                                                }
+                                                                                                &:hover {
+                                                                                                    background: #eee;
+                                                                                                    color: #222;
+                                                                                                }
+                                                                                            }
+                                                                                            &.search {
+                                                                                                float: right;
+                                                                                                position: absolute;
+                                                                                                right: 0;
+                                                                                                & .left-icon {
+                                                                                                    position: relative;
+                                                                                                    top: 5px;
+                                                                                                }
+                                                                                            }
+                                                                                            &.slide-menu {
+                                                                                                position: absolute;
+                                                                                                left: 0;
+                                                                                                & .left-icon {
+                                                                                                    position: relative;
+                                                                                                    top: 5px;
+                                                                                                    font-size: 24px;
+                                                                                                }
+
+                                                                                                // menu toggle 
+                                                                                                & .menu-toggle {
+                                                                                                    position:relative;
+                                                                                                    top:0;
+                                                                                                    right:0;
+                                                                                                    font-size:18px;
+                                                                                                    line-height:normal;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    // sub navigation
+                                                                                    &.sub-navigation {
+                                                                                        border-bottom: 1px solid #ccc;
+                                                                                        margin-top: 0;
+                                                                                        background: none;
+                                                                                        ul {
+                                                                                            li {
+                                                                                                a {
+                                                                                                    color: $green-bg;
+                                                                                                    font-size: 16px;
+                                                                                                    padding: 10px 14px;
+                                                                                                    line-height: 22px;
+                                                                                                    -webkit-transform: perspective(1px) translateZ(0);
+                                                                                                    transform: perspective(1px) translateZ(0);
+                                                                                                    box-shadow: 0 0 1px transparent;
+                                                                                                    position: relative;
+                                                                                                    &:before {
+                                                                                                        content: "";
+                                                                                                        position: absolute;
+                                                                                                        z-index: -1;
+                                                                                                        left: 50%;
+                                                                                                        right: 50%;
+                                                                                                        bottom: 0;
+                                                                                                        background: $link-color;
+                                                                                                        height: 2px;
+                                                                                                        -webkit-transition-property: left, right;
+                                                                                                        transition-property: left, right;
+                                                                                                        -webkit-transition-duration: 0.3s;
+                                                                                                        transition-duration: 0.3s;
+                                                                                                        -webkit-transition-timing-function: ease-out;
+                                                                                                        transition-timing-function: ease-out;
+                                                                                                    }
+                                                                                                    &:hover {
+                                                                                                        background: $white-bg;
+                                                                                                        color: $link-color;
+                                                                                                        &:before {
+                                                                                                            left: 0;
+                                                                                                            right: 0;
+                                                                                                        }
+                                                                                                    }
+                                                                                                    &.active-menu {
+                                                                                                        &:before {
+                                                                                                            left: 0;
+                                                                                                            width: $full-width;
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                
+                                                                                // radio css
+                                                                                .top-nav-box {
+                                                                                    background: #f5f5f5;
+                                                                                    border-bottom: 1px solid #ccc;
+                                                                                    & .container {
+                                                                                        max-width: $full-width;
+                                                                                    }
+                                                                                    & .navigation_box {
+                                                                                        display: flex;
+                                                                                        background: none;
+                                                                                        margin: 0;
+                                                                                        float: right;
+                                                                                        ul {
+                                                                                            float: left;
+                                                                                            margin: 0;
+                                                                                            padding: 0;
+                                                                                            width: $full-width;
+                                                                                            li {
+                                                                                                list-style: none;
+                                                                                                margin: 0;
+                                                                                                padding: 0;
+                                                                                                float: left;
+                                                                                                border-left: 1px solid #ccc;
+                                                                                                height: 48px;
+                                                                                                & .left-icon {
+                                                                                                    font-size: 20px;
+                                                                                                    position: relative;
+                                                                                                    top: 4px;
+                                                                                                    margin-right: 8px;
+                                                                                                }
+                                                                                                a {
+                                                                                                    font-weight: $regular;
+                                                                                                    color: #222 !important;
+                                                                                                    padding: 8px 12px;
+                                                                                                }
+                                                                                                ul {
+                                                                                                    background: #ddd;
+                                                                                                    li {
+                                                                                                        height: auto;
+                                                                                                        a {
+                                                                                                            background: #ddd;
+                                                                                                            padding: 9px 16px;
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                                &.open {
+                                                                                                    a {
+                                                                                                        background: #e0e0e0 !important;
+                                                                                                        color: #222 !important;
+                                                                                                    }
+                                                                                                    ul {
+                                                                                                        li {
+                                                                                                            a {
+                                                                                                                background: #ddd !important;
+                                                                                                                padding: 9px 16px;
+                                                                                                                &:hover {
+                                                                                                                    background: #333 !important;
+                                                                                                                    color: $white-bg;
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                                a {
+                                                                                                    color: $white-bg !important;
+                                                                                                    font-size: 14px;
+                                                                                                    padding: 8px 15px;
+                                                                                                    background: none;
+                                                                                                    &:hover {
+                                                                                                        background: $top-nav-bg;
+                                                                                                        color: $white-bg;
+                                                                                                    }
+                                                                                                    &.active-nav {
+                                                                                                        background: $top-nav-bg;
+                                                                                                        color: $white-bg;
+                                                                                                    }
+                                                                                                }
+                                                                                                &.live-notificaion {
+                                                                                                    & .notifications {
+                                                                                                        position: relative;
+                                                                                                        & .notification-counter {
+                                                                                                            position: absolute;
+                                                                                                            top: -10px;
+                                                                                                            right: -5px;
+                                                                                                            background: #d13938;
+                                                                                                            color: $white-bg;
+                                                                                                            min-width: 24px;
+                                                                                                            padding: 0 5px;
+                                                                                                            text-align: center;
+                                                                                                            line-height: 24px;
+                                                                                                            height: 24px;
+                                                                                                            @include border-radius(50px);
+                                                                                                        }
+                                                                                                    }
+                                                                                                    a {
+                                                                                                        margin-left: 10px;
+                                                                                                    }
+                                                                                                }
+                                                                                                &.slide-menu {
+                                                                                                    display: none;
+                                                                                                    position: relative;
+                                                                                                    & .left-icon {
+                                                                                                        margin: 0;
+                                                                                                    }
+                                                                                                    a {
+                                                                                                        text-align: center;
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                            ul {
+                                                                                                li {
+                                                                                                    ul {
+                                                                                                        top: 0;
+                                                                                                        right: -$full-width;
+                                                                                                        left: inherit;
+                                                                                                    }
+                                                                                                    a {
+                                                                                                        color: #888;
+                                                                                                        font-size: 14px !important;
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    .calendar-box {
+                                                                                        text-align: left;
+                                                                                        padding-top: 12px;
+                                                                                        & .current-date {
+                                                                                            color: #555;
+                                                                                            &.current-time {
+                                                                                                margin-right: 0;
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                
+                                                                                .main-menu {
+                                                                                    background: $white-bg;
+                                                                                    padding-top: 14px;
+                                                                                    padding-bottom: 14px;
+                                                                                    border-bottom: 1px solid #ddd;
+                                                                                    border-top: 1px solid #ddd;
+                                                                                    min-height: 80px;
+                                                                                }
+                                                                                
+                                                                                .dropdown-toggle {
+                                                                                    &:after {
+                                                                                        top: 2px;
+                                                                                        position: relative;
+                                                                                    }
+                                                                                }
+                                                                                
+                                                                                // slide nav
+                                                                                .mm-menu {
+                                                                                    background: #222 !important;
+                                                                                    opacity: 1;
+                                                                                    &.active {
+                                                                                        opacity: 1;
+                                                                                    }
+                                                                                    & .nav-title {
+                                                                                        font-size: 14px;
+                                                                                        text-transform: uppercase;
+                                                                                        color: #888;
+                                                                                        background: $white-bg;
+                                                                                        display: inline-block;
+                                                                                        width: $full-width;
+                                                                                        padding: 10px 20px;
+                                                                                    }
+                                                                                    .search-site {
+                                                                                        display: block !important;
+                                                                                        position: relative;
+                                                                                        float: left;
+                                                                                        right: 0;
+                                                                                        @include box-shadow (none);
+                                                                                    }
+                                                                                    & .navigation_box {
+                                                                                        ul {
+                                                                                            li {
+                                                                                                float: left;
+                                                                                                width: $full-width;
+                                                                                                a {
+                                                                                                    font-size: 16px;
+                                                                                                    padding: 10px 20px;
+                                                                                                    color: $white-bg;
+                                                                                                    border-top: 1px solid #333;
+                                                                                                    line-height: 20px;
+                                                                                                }
+                                                                                                &.search {
+                                                                                                    display: none;
+                                                                                                }
+                                                                                                ul {
+                                                                                                    display: block;
+                                                                                                    background: none;
+                                                                                                    position: relative !important;
+                                                                                                    top: 0;
+                                                                                                    border-radius: 0;
+                                                                                                    border: 0;
+                                                                                                    border: 0;
+                                                                                                    @include transform(none !important);
+                                                                                                    ul {
+                                                                                                        right: 0;
+                                                                                                    }
+                                                                                                }
+                                                                                                &.show {
+                                                                                                    a {
+                                                                                                        background: none;
+                                                                                                        &:hover {
+                                                                                                            background: #222 !important;
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                        &.tops {
+                                                                                            background: #e74c3c;
+                                                                                            float: left;
+                                                                                            width: $full-width;
+                                                                                            ul {
+                                                                                                li {
+                                                                                                    a {
+                                                                                                        background: #e74c3c;
+                                                                                                        &:hover {
+                                                                                                            background: #222 !important;
+                                                                                                        }
+                                                                                                    }
+                                                                                                    &.live-btn {
+                                                                                                        a {
+                                                                                                            background: #ffdb3a;
+                                                                                                            color: #222 !important;
+                                                                                                            line-height: 20px;
+                                                                                                            text-transform: uppercase;
+                                                                                                            margin-bottom: 10px;
+                                                                                                            padding: 5px 20px;
+                                                                                                            margin-left: 18px;
+                                                                                                            margin-top: 13px;
+                                                                                                            display: table;
+                                                                                                            width: auto;
+                                                                                                            @include border-radius(35px);
+                                                                                                            &:hover {
+                                                                                                                background: #ffdb3a !important;
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                        &.mains {
+                                                                                            background: #222;
+                                                                                            float: left;
+                                                                                            width: $full-width;
+                                                                                            ul {
+                                                                                                li {
+                                                                                                    a {
+                                                                                                        color: $white-bg;
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                
+                                                                                .mm-menu-open {
+                                                                                    overflow: hidden;
+                                                                                }
+                                                                                
+                                                                                .live-tv {
+                                                                                    text-transform: uppercase;
+                                                                                }
+                                                                                
+                                                                                .mm-menu-toggle {
+                                                                                    position: relative;
+                                                                                    left: 0;
+                                                                                }
+                                                                                
+                                                                                // slide nav box
+                                                                                .slide-nav-box {
+                                                                                    ul {
+                                                                                        li {
+                                                                                            &.slide-menu {
+                                                                                                display: none;
+                                                                                            }
+                                                                                            &.search {
+                                                                                                display: none;
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+
+                                                                                .menu-box {
+                                                                                    & .navigation_box {
+                                                                                        padding:0;
+                                                                                        & .menu-toggle {
+                                                                                            display:none;
+                                                                                        }
+                                                                                        ul {
+                                                                                            display:block;
+                                                                                            margin:0;
+                                                                                            padding:0;
+                                                                                            top:0;
+                                                                            
+                                                                                            li {
+                                                                                                display:inline-block;
+                                                                                                width:$full-width;
+                                                                                                float:none;
+                                                                                                border-top: 1px solid #ccc;
+                                                                                                & .dropdown-toggle  { 
+                                                                                                &:after {
+                                                                                                        @include transition(.3s all ease);
+                                                                                                        @include transform(rotate(90));
+                                                                                                    }
+                                                                                                }
+                                                                                                &.search {
+                                                                                                    display:none;
+                                                                                                }
+                                                                            
+                                                                                                &.dropdown {
+                                                                                                    position:relative;
+                                                                                                    & .dropdown-btn {
+                                                                                                        position: absolute;
+                                                                                                        top:10px;
+                                                                                                        right:10px;
+                                                                                                        line-height:24px;
+                                                                                                        cursor: pointer;
+                                                                                                        width:24px;
+                                                                                                        height:24px;
+                                                                                                        border:1px solid #ddd;
+                                                                                                        text-align: center;
+                                                                                                       
+                                                                                                    }
+                                                                                                }
+                                                                            
+                                                                                                &.active-menu {
+                                                                                                    & .menu-up {
+                                                                                                        &:after {
+                                                                                                            @include transform(rotate(180deg));
+                                                                                                            @include transition(.3s all ease);
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                                a {
+                                                                                                    // drop icon setting
+                                                                                                  
+                                                                                                    padding-bottom:5px;
+                                                                                                    color:$dark-gray !important;
+                                                                                                    &.selected {
+                                                                                                        
+                                                                                                            color:#d13938 !important;
+                                                                                                        
+                                                                                                    }
+                                                                                                    &:hover {
+                                                                                                        color:$dark-gray !important;
+                                                                                                        background:#eee!important;
+                                                                                                    }
+                                                                                                }
+                                                                            
+                                                                                                ul {
+                                                                                                    position:relative;
+                                                                                                    display:block;
+                                                                                                    padding-left:0;
+                                                                                                    background:#ddd !important;
+                                                                                                    @include box-shadow(none);
+                                                                                                    li {
+                                                                                                        a {
+                                                                                                            color:#666 !important;
+                                                                                                            padding-left:20px;
+                                                                                                            padding-right:20px;
+                                                                                                            &:hover {
+                                                                                                                color:$dark-gray !important;
+                                                                                                                background:none !important;
+                                                                                                            }
+                                                                                                        }
+                                                                            
+                                                                                                        ul {
+                                                                                                            right:0;
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                            
+                                                                                        ul {
+                                                                                            &.megabox {
+                                                                                                .row {
+                                                                                                    margin:0;
+                                                                                                }
+                                                                                                & .items {
+                                                                                                    padding-top:30px;
+                                                                                                    padding-bottom:30px;
+                                                                                                    border-top:1px solid #ddd;
+                                                                                                    max-width: $full-width;
+                                                                                                    flex:0 0 $full-width;
+                                                                                                    -ms-flex:0 0 $full-width;
+                                                                                                    &:nth-child(1) {
+                                                                                                        border-top:0;
+                                                                                                        padding-top:0;
+                                                                                                    }
+                                                                            
+                                                                                                    
+                                                                                                }
+                                                                            
+                                                                                                & .list-item {
+                                                                                                    padding-top:30px;
+                                                                                                    padding-bottom:30px;
+                                                                                                    border-top:1px solid #ddd;
+                                                                                                    max-width: $full-width;
+                                                                                                    flex:0 0 $full-width;
+                                                                                                    -ms-flex:0 0 $full-width;
+                                                                                                    &:nth-child(1) {
+                                                                                                        border-top:0;
+                                                                                                        padding-top:0;
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                            
+                                                                                    .navigation_box li.main-home a {
+                                                                                        background:#ccc;
+                                                                                        color:$white-bg !important;
+                                                                                    }
+                                                                            
+                                                                            
+                                                                                  
+                                                                                }
+                                                                            
+                                                                                .menu-toggle {
+                                                                                    font-size: 30px;
+                                                                                    color: #777;
+                                                                                    padding: 0;
+                                                                                    line-height: 42px;
+                                                                                    position: absolute;
+                                                                                    right: 15px;
+                                                                                    z-index: 98;
+                                                                                    cursor: pointer;
+                                                                                    top: 20px;
+                                                                                    @include border-radius(5px);
+                                                                                    @include transition(.3s ease-in-out);
+                                                                                    &:hover {
+                                                                                        color:#333;
+                                                                                        @include transition(.3s ease-in-out);
+                                                                                    }
+                                                                                }

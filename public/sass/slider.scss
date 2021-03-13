@@ -1,0 +1,285 @@
+                            @import 'variables.scss';
+                            @import 'mixins.scss';
+                            // sliderbox
+                            .slide-box {
+                                float: left;
+                                width: $full-width;
+                                position: relative;
+                                & .overlay-box {
+                                    background: rgba(2, 0, 0, 0.5);
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    width: $full-width;
+                                    height: 100%;
+                                }
+                                img {
+                                    object-fit: cover;
+                                    height: 100vh;
+                                    width: $full-width;
+                                }
+                                .owl-theme .owl-controls {
+                                    height: 0;
+                                    width: 100%;
+                                    bottom: 0;
+                                    top: inherit;
+                                    position: static;
+                                    margin: 0;
+                                }
+                                .owl-theme .owl-dots {
+                                    bottom: 40px;
+                                    top: inherit;
+                                }
+                                .owl-dots .owl-dot span {
+                                    width: 10px;
+                                    height: 10px;
+                                    background: $white-bg;
+                                }
+                                .owl-dot.active span {
+                                    background: $white-bg !important;
+                                    width: 10px !important;
+                                    height: 10px !important;
+                                }
+                                .owl-item.active .captionbox {
+                                    @include animation (fadeInUp 500ms linear 500ms both);
+                                }
+                                .captionbox {
+                                    padding: 30px 100px;
+                                    position: absolute;
+                                    bottom: 100px;
+                                    font-size: 19px;
+                                    width: $full-width;
+                                    text-align: center;
+                                    & .maintitle {
+                                        color: $text-color;
+                                        display: block;
+                                        margin: 0;
+                                        font-size: 42px;
+                                        font-weight: $regular;
+                                        line-height: 48px;
+                                        margin-right: 0;
+                                        padding: 0 10%;
+                                    }
+                                }
+                                & .owl-prev {
+                                    padding: 10px 18px !important;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 0;
+                                    margin: 0 !important;
+                                    font-size: 18px !important;
+                                    background: rgba(0, 0, 0, 0.5) !important;
+                                    @include transform(translate(0, -50%));
+                                }
+                                & .owl-next {
+                                    @extend .owl-prev;
+                                    right: 0;
+                                    left: inherit;
+                                }
+                            }
+                            
+                            .mainslider {
+                                & .item {
+                                    position: relative;
+                                }
+                                & .caption-box {
+                                    position: absolute;
+                                    bottom: 0;
+                                    z-index: 98;
+                                    padding: 30px;
+                                    background: rgba(0, 0, 0, 0.5);
+                                    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.09) 15%, rgba(0, 0, 0, 0.85) 100%);
+                                    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.09) 15%, rgba(0, 0, 0, 0.85) 100%);
+                                    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.09) 15%, rgba(0, 0, 0, 0.85) 100%);
+                                    //filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+                                }
+                            }
+                            
+                            .icon-right {
+                                font-size: 22px;
+                                top: 2px;
+                                position: relative;
+                                margin-left: 6px;
+                            }
+                            
+                            // student slider
+                            .student-slide-box {
+                                .owl-theme .owl-controls {
+                                    height: 0;
+                                    width: 100%;
+                                    bottom: 0;
+                                    top: inherit;
+                                    position: static;
+                                    margin: 0;
+                                }
+                                .owl-theme .owl-dots {
+                                    bottom: 0;
+                                    top: inherit;
+                                    position: relative !important;
+                                    margin-top: 30px !important;
+                                }
+                                .owl-dots .owl-dot span {
+                                    width: 10px;
+                                    height: 10px;
+                                    background: #ededed;
+                                }
+                                .owl-dot.active span {
+                                    background: $white-bg !important;
+                                    width: 10px !important;
+                                    height: 10px !important;
+                                }
+                            }
+                            
+                            // student slider
+                            .partner-box {
+                                .owl-theme .owl-controls {
+                                    height: 0;
+                                    width: 100%;
+                                    bottom: 0;
+                                    top: inherit;
+                                    position: static;
+                                    margin: 0;
+                                }
+                                .owl-theme .owl-dots {
+                                    bottom: 0;
+                                    top: inherit;
+                                    position: relative !important;
+                                    margin-top: 30px !important;
+                                }
+                                .owl-dots .owl-dot span {
+                                    width: 10px;
+                                    height: 10px;
+                                    background: #ededed;
+                                }
+                                .owl-dot.active span {
+                                    background: $white-bg !important;
+                                    width: 10px !important;
+                                    height: 10px !important;
+                                }
+                            }
+                            
+                            // search and slide section
+                            .search-section {
+                                background: $text-color;
+                                height: 100vh;
+                            }
+                            
+                            .slide-section {
+                                @extend .search-section;
+                                background: $white-bg;
+                                padding: 0;
+                            }
+                            
+                            // college slider
+                            .featured-college {
+                                &.side-highlight {
+                                    border: 1px solid #ddd;
+                                    & .items {
+                                        padding: 0;
+                                        a {
+                                            border: 0;
+                                            &:hover {
+                                                @include box-shadow(none);
+                                            }
+                                        }
+                                        width: 100%;
+                                        img {
+                                            width: auto;
+                                        }
+                                    }
+                                }
+                                .owl-theme .owl-controls {
+                                    height: 0;
+                                    width: 100%;
+                                    bottom: 0;
+                                    top: inherit;
+                                    position: static;
+                                    margin: 0;
+                                }
+                                .owl-theme .owl-dots {
+                                    bottom: 0;
+                                    top: inherit;
+                                    position: absolute;
+                                    margin-top: 0;
+                                }
+                                .owl-dots .owl-dot span {
+                                    width: 10px;
+                                    height: 10px;
+                                    background: #ededed;
+                                }
+                                .owl-dot.active span {
+                                    background: $text-color !important;
+                                    width: 10px !important;
+                                    height: 10px !important;
+                                }
+                            }
+                            
+                            // college slider
+                            // college slider
+                            .help-slider {
+                                & .items {
+                                    padding: 0;
+                                    a {
+                                        border: 0 !important;
+                                        &:hover {
+                                            @include box-shadow(none);
+                                        }
+                                    }
+                                    width: 100%;
+                                    img {
+                                        width: auto;
+                                    }
+                                }
+                            }
+                            
+                            .owl-theme .owl-controls {
+                                height: 0;
+                                width: 100%;
+                                bottom: 0;
+                                top: inherit;
+                                position: static;
+                                margin: 0;
+                            }
+                            
+                            .owl-theme .owl-dots {
+                                bottom: 0;
+                                top: inherit;
+                                position: absolute;
+                                margin-top: 0;
+                            }
+                            
+                            .owl-dots .owl-dot span {
+                                width: 10px;
+                                height: 10px;
+                                background: #ededed;
+                            }
+                            
+                            .owl-dot.active span {
+                                background: $text-color !important;
+                                width: 10px !important;
+                                height: 10px !important;
+                            }
+
+                            // main story slider
+
+                            .main-story-slider {
+                                
+                                    & .owl-dots {
+                                        position: absolute;
+                                        margin-top:0;
+                                        & .owl-dot {
+                                            &.active {
+                                                span {
+                                                    background: #6e6e6e !important;
+                                                }
+                                            }
+                                            span {
+                                                width: 8px !important;
+                                                height: 8px !important;
+                                                margin: 5px;
+                                                background: #a6a6a6 !important;
+                                            }
+                                        }
+                                    }
+                                
+                            }

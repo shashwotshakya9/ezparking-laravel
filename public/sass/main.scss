@@ -1,0 +1,340 @@
+                                                        @import 'variables.scss';
+                                                        @import 'mixins.scss';
+                                                        a {
+                                                            color: $link-color;
+                                                            outline: $no-outline;
+                                                            text-decoration: $none;
+                                                            @include transition (all .3s ease-in-out);
+                                                            display: inline;
+                                                        }
+                                                        
+                                                        a:hover {
+                                                            color: $hover-color;
+                                                            @include transition (all .3s ease-in-out);
+                                                            text-decoration: none;
+                                                        }
+                                                        
+                                                        a:visited,
+                                                        a:acitve {
+                                                            text-decoration: $none;
+                                                        }
+                                                        
+                                                        a:active {
+                                                            color: $link-color;
+                                                        }
+                                                        
+                                                        a:focus {
+                                                            text-decoration: $none;
+                                                            outline: $no-outline;
+                                                        }
+                                                        
+                                                        a img,
+                                                        img {
+                                                            border: $no-border;
+                                                        }
+                                                        
+                                                        p {
+                                                            padding: 10px 0;
+                                                        }
+                                                        
+                                                        object {
+                                                            outline: $no-outline;
+                                                            border: $no-border;
+                                                            float: left;
+                                                        }
+                                                        
+                                                        button:focus {
+                                                            outline: $no-outline;
+                                                        }
+                                                        
+                                                        * {
+                                                            outline: $no-outline;
+                                                            margin: $no-margin;
+                                                            padding: $no-padding;
+                                                        }
+                                                        
+                                                        h1,
+                                                        h2,
+                                                        h3,
+                                                        h4,
+                                                        h5,
+                                                        h6 {
+                                                            font-weight: normal;
+                                                            font-style: normal;
+                                                            font-size: inherit;
+                                                        }
+                                                        
+                                                        body {
+                                                            margin: $no-margin;
+                                                            padding: $no-padding;
+                                                            font-family: $primary-font;
+                                                            font-size: $body-text;
+                                                            line-height: 32px;
+                                                            font-weight: $regular;
+                                                            color: $body-color;
+                                                            background: $body-bg;
+                                                            position: relative;
+                                                            z-index: -1;
+                                                            overflow-x: hidden;
+                                                            -webkit-font-smoothing: antialiased;
+                                                            -moz-osx-font-smoothing: grayscale;
+                                                        }
+                                                        
+                                                        // pagination
+                                                        .pagination {
+                                                            margin: 0px;
+                                                            display: inline-block;
+                                                            width: 100%;
+                                                            padding: 70px 0 10px 0;
+                                                            text-align: center;
+                                                            a {
+                                                                background: #f3efef;
+                                                                text-decoration: none;
+                                                                color: #757575;
+                                                                padding: 0 10px;
+                                                                margin: 0 2px;
+                                                                font-size: 14px;
+                                                                display: inline-block;
+                                                                padding: 10px 15px;
+                                                                line-height: 18px;
+                                                                font-weight: 500;
+                                                                text-transform: uppercase;
+                                                                @include border-radius(20px);
+                                                            }
+                                                            a:hover {
+                                                                color: $white-bg;
+                                                                background: $hover-color;
+                                                            }
+                                                            & .current {
+                                                                background: #ccc;
+                                                                text-decoration: none;
+                                                                color: $text-color;
+                                                                padding: 0 10px;
+                                                                margin: 0 0 0px 0;
+                                                                font-size: 14px;
+                                                                display: inline-block;
+                                                                padding: 10px 17px;
+                                                                line-height: 18px;
+                                                                font-weight: 500;
+                                                                text-transform: uppercase;
+                                                                @include border-radius(20px);
+                                                            }
+                                                        }
+                                                        
+                                                        .section {
+                                                            display: inline-block;
+                                                            width: $full-width;
+                                                        }
+                                                        
+                                                        #content {
+                                                            display: inline-block;
+                                                            width: $full-width;
+                                                            margin: 0 auto;
+                                                        }
+
+                                                        // theme settings
+
+                                                         /*popup*/
+
+        .modalbox {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            text-align: center;
+            overflow: auto;
+            background:#fff;
+        }
+
+        .modalbox .modal_content {
+            width: 100%;
+            text-align: center;
+            display: table;
+            height: 100vh;
+        }
+
+        .modalbox .modal_content .imagebox {
+            max-width: 94%;
+            margin: 0 auto;
+            display: table-cell;
+            padding: 3%;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        .modalbox .modal_content .imagebox img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .modalbox .modal_content .imagebox .logobox img {
+            max-width:250px;
+        }
+
+        .modalbox .modal_content a.close_btn {
+            background:#d13938;
+            display: inline-block;
+            color: #fff;
+            font-size: 14px;
+            padding: 5px 15px;
+            font-family: arial, sans-serif;
+
+
+        }
+
+         .modalbox .modal_content a.close_btn:hover {
+             background:#222;
+         }
+
+        .logobox {
+            text-align: center;
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .close-box {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom:15px;
+
+        }
+        .close-box .arrows {
+                position:relative;
+                top:2px;
+                margin-left:5px;
+            }
+        /*responsive part*/
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .modalbox .modal_content .imagebox img {
+                max-width: 100%;
+            }
+            .logobox img {
+                max-width:220px;
+            }
+        }
+
+        @media(min-width:768px) and (max-width:991px) {
+            .modalbox .modal_content .imagebox img {
+                max-width: 100%;
+            }
+            .logobox img {
+                max-width:180px;
+            }
+        }
+
+        @media(max-width:767px) {
+            .modalbox .modal_content .imagebox img {
+                max-width: 100%;
+            }
+            .logobox img {
+                max-width:180px;
+            }
+        }
+
+        @media(max-width:480px) {
+            .modalbox .modal_content .imagebox img {
+                max-width: 100%;
+            }
+            .logobox img {
+                max-width:180px;
+            }
+        }
+
+        @media (max-width: 240px) {
+            .modalbox .modal_content .imagebox img {
+                max-width: 100%;
+            }
+            .logobox img {
+                max-width:180px;
+            }
+        }
+
+
+        .top-nav-box, .tags.cat-tags {
+            background:#e74c3c;
+        }
+
+
+
+/* theme change*/
+
+header {
+    background:#fff;
+}
+
+.trending-news {
+    background:#eee;
+}
+
+ul.trending-news li a {
+    color:#333;
+}
+
+.top-nav-box {
+    background:#eee !important;
+}
+
+.main-menu, .fixed-tops, .fixed-tops .navigation-box, .fixed-tops .navigation_box {
+    background:#fff;
+}
+
+.cat-tags {
+
+    border-color:#c99e66;
+}
+
+.break-tags {
+    background:#e74c3c;
+}
+
+/* top nav settings*/
+
+.navigation_box ul li a {
+    color:#222 !important;
+}
+
+.navigation_box ul li a:hover,
+.navigation_box ul li.open a {
+    background:#eee !important;
+    color:#222 !important;
+}
+
+.navigation_box ul li ul {
+  background:#ddd !important;
+}
+
+.navigation_box ul li ul li {
+  border-color:#ccc !important;
+}
+
+
+
+.navigation_box ul li.open a {
+    color:#222 !important;
+}
+.navigation_box ul li ul li a,
+.navigation_box ul li.open ul li a {
+    color:#222 !important;
+}
+.navigation_box ul li.open ul li a:hover {
+  color:#fff !important;
+}
+
+.top-nav-box .navigation_box ul li a,
+.top-nav-box .navigation_box ul li.open a {
+    color:#555 !important;
+
+}
+
+
+.top-nav-box .navigation_box ul li.open ul li a:hover {
+    background:#333 !important;
+    color:#fff !important;
+}
+
+.top-nav-box .calendar-box .current-date {
+    color:#555;
+}
+
