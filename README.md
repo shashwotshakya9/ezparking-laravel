@@ -1,5 +1,5 @@
-**EZ-PARKING 
-**This is a project I did back in 2021. This is the backend dashboard made in laravel from scratch which is connected to the flutter application.
+<b>EZ-PARKING </b>
+This is a project I did back in 2021. This is the backend dashboard made in laravel from scratch which is connected to the flutter application.
 
 Some screenshots of the dashboard:
 ![image](https://github.com/user-attachments/assets/3c950e28-9185-4af1-b685-285ecadaac59)
