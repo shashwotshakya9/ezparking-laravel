@@ -1,5 +1,12 @@
-Some screenshots of the dahsboard:
+This is a project I did back in 2021. This is the backend dashboard made in laravel from scratch which is connected to the flutter application.
+
+Some screenshots of the dashboard:
+![image](https://github.com/user-attachments/assets/3c950e28-9185-4af1-b685-285ecadaac59)
 ![image](https://github.com/user-attachments/assets/0f10977e-9b65-4166-959b-0e710aa9d48d)
+![image](https://github.com/user-attachments/assets/77759ce1-d9e3-4e9c-8afc-91ef0ec3affc)
+![image](https://github.com/user-attachments/assets/5d08b46f-e6a1-471a-adda-8afa552501b3)
+
+
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
